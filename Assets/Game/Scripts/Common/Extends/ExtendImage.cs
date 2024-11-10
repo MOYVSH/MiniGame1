@@ -7,7 +7,7 @@ namespace NUnityExtends
     public class ExtendImage : NImage
     {
         [SerializeField]
-        private bool m_SlicedClipMode = false;
+        public bool m_SlicedClipMode = true;
 
         protected override void OnPopulateMesh(VertexHelper vh)   
         {

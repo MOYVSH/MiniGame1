@@ -45,7 +45,7 @@ MonoBehaviour:
       - CollectPath: Assets/Game/MiniGame_Res/UI
         CollectorGUID: f6e7bc04d5535a74bb5227314746bf46
         CollectorType: 0
-        AddressRuleName: AddressByFolderAndFileName
+        AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
         FilterRuleName: CollectAll
         AssetTags: 

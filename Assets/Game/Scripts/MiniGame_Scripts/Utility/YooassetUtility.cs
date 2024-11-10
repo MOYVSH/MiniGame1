@@ -55,6 +55,12 @@ public class YooassetUtility : IUtility
         return handle.AssetObject as T;
     }
     
+    public T LoadAssetSync<T>(string path) where T : Object
+    {
+        AssetHandle handle = package.LoadAssetSync(path);
+        return handle.AssetObject as T;
+    }
+    
     public async UniTask<T> LoadSubAssetAsync<T>(string path,string subName) where T : Object
     {
         SubAssetsHandle  handle = package.LoadSubAssetsAsync<T>(path);

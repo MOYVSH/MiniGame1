@@ -21,12 +21,12 @@ public class UISystem : AbstractUISystem
 
     protected override void RegisterPanelsLoadPath()
     {
-
+        AddPanelLoadPath<LoadingView>("LoadingView");
     }
 
     protected override Object LoadAsset(string path)
     {
-        return null;//GameUtils.Load<GameObject>(path);
+        return this.GetUtility<YooassetUtility>().LoadAssetSync<GameObject>(path);
     }
 
 }
