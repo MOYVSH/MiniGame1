@@ -1,0 +1,16 @@
+{
+    "name": "MOYVBase",
+    "rootNamespace": "",
+    "references": [
+        "MOYVDoTween"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

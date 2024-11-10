@@ -1,0 +1,22 @@
+﻿{
+  "name": "QFramework.Tests.Editor",
+  "rootNamespace": "",
+  "references": [
+    "QFramework",
+    "QFramework.Tests.Runtime",
+    "UnityEngine.TestRunner",
+    "UnityEditor.TestRunner",
+    "UnityEditor.UI",
+    "UnityEngine.UI"
+  ],
+  "includePlatforms": ["Editor"],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll"
+  ],
+  "autoReferenced": true,
+  "versionDefines": [],
+  "noEngineReferences": false
+}

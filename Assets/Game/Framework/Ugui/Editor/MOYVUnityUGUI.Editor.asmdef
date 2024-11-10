@@ -1,0 +1,21 @@
+{
+    "name": "MOYVUnityUGUI.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Unity.TextMeshPro.Editor",
+        "Unity.TextMeshPro",
+        "MOYVUnityUGUI",
+        "MOYVDoTween"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

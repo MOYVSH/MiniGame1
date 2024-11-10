@@ -1,0 +1,19 @@
+{
+    "name": "MOYVUnityUGUI",
+    "rootNamespace": "",
+    "references": [
+        "Unity.TextMeshPro",
+        "QFramework",
+        "MOYVBase",
+        "MOYVDoTween"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
