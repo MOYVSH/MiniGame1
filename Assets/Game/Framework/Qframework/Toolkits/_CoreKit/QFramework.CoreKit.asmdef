@@ -1,0 +1,7 @@
+{
+  "name": "QFramework.CoreKit",
+  "references": [
+    "QFramework",
+    "MOYVBase"
+  ]
+}

@@ -19,6 +19,7 @@ public class LaunchController : AbstractMonoBehaviourController
     private IEnumerator Start()
     {
         yield return AOT.Interface;
+        yield return MiniGame.Interface;
         Log($"This Architecture is {this.GetArchitecture().GetType().Name}");
         
         //获取UI系统

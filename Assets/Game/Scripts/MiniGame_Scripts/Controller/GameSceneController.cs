@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using QFramework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 public class GameSceneController : MonoSingleton<GameSceneController>, IController
 {
@@ -13,12 +14,18 @@ public class GameSceneController : MonoSingleton<GameSceneController>, IControll
     {
         return MiniGame.Interface;
     }
-
+    
     public string logTag { get; }
     public void Log(object msg, GameObject context = null) { }
     public void LogWarning(object msg, GameObject context = null) { }
     public void LogError(object msg, GameObject context = null) { }
-    
+
+    protected override void Awake()
+    {
+        base.Awake();
+        Object.DontDestroyOnLoad(gameObject);
+    }
+
     public async UniTaskVoid FirstLoadMainScene()
     {
         await Task.Delay(TimeSpan.FromSeconds(0.2f));
@@ -47,7 +54,7 @@ public class GameSceneController : MonoSingleton<GameSceneController>, IControll
     async UniTask LoadCurrentSceneAsync()
     {
         await ChangeSceneAsync("GameScene");
-        DoAfterLevelLoad();
+        
         await Task.Delay(TimeSpan.FromSeconds(0.2f));
         
         // 延迟关闭loading界面

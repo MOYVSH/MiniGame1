@@ -22,6 +22,6 @@ public class MiniGame : ArchitectureProxy<MiniGame>
 
     private void RegisterUtility()
     {
-        //this.RegisterUtility<YooassetUtility>(new YooassetUtility());
+        this.RegisterUtility<YooassetUtility>(new YooassetUtility());
     }
 }
