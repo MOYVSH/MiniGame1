@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MonsterLove.StateMachine;
 using UnityEngine;
@@ -153,6 +154,7 @@ public class SceneFlowController : MonoSingleton<SceneFlowController>, IControll
 
     public async UniTaskVoid FirstLoadMainScene()
     {
+        await LoadConfig(); // 加载配置数据
         await Task.Delay(TimeSpan.FromSeconds(0.2f));
         var system = GameArchitecture.Interface.GetSystem<UISystem>();
         system.OpenPanel<LoadingView>();
@@ -197,6 +199,18 @@ public class SceneFlowController : MonoSingleton<SceneFlowController>, IControll
         // 打开 UI 等操作
         
     }
+
+    private async UniTask LoadConfig()
+    {
+        Log($"数据表加载开始，当前时间: {Time.time}");
+        IEnumerator coroutine = this.GetSystem<TimerSystem>().ExecuteBySlice(new List<Action>
+        {
+            
+        });
+        await coroutine.ToUniTask(this);
+        Log($"数据表加载完成，当前时间: {Time.time}");
+    }
+
 
     #endregion
 }
