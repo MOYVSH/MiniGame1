@@ -29,6 +29,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using QFramework.Profiler;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -526,7 +527,13 @@ namespace QFramework
     public abstract class AbstractCommand : AbstractLogger, ICommand
     {
         private IArchitecture mArchitecture;
-        
+
+#if QF_PROFILER
+        public AbstractCommand()
+        {
+            ProfilerCollection.CommandCount.Value++;
+        }
+#endif
         public override IArchitecture GetArchitecture() => mArchitecture;
         
         void ICanSetArchitecture.SetArchitecture(IArchitecture architecture) => mArchitecture = architecture;
@@ -562,7 +569,14 @@ namespace QFramework
     public abstract class AbstractQuery<T> : AbstractLogger, IQuery<T>
     {
         public T Do() => OnDo();
-        
+
+#if QF_PROFILER
+        public AbstractQuery()
+        {
+            ProfilerCollection.QueryCount.Value++;
+        }
+#endif
+
         protected abstract T OnDo();
         
         
@@ -1265,11 +1279,11 @@ namespace QFramework
     
     #endregion
     
-#if UNITY_EDITOR
+/*#if UNITY_EDITOR
     internal class EditorMenus
     {
         [UnityEditor.MenuItem("QFramework/Install QFrameworkWithToolKits")]
         public static void InstallPackageKit() => UnityEngine.Application.OpenURL("https://qframework.cn/qf");
     }
-#endif
+#endif*/
 }

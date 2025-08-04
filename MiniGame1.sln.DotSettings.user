@@ -1,0 +1,19 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AString_002Ecs_002Fl_003AC_0021_003FUsers_003FMOYV_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F3789ee403a53437cbb6b5d9ab6311f51573620_003F99_003F0ea27859_003FString_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ASystem_002ECollections_002EGeneric_002Ecs_002Fl_003AC_0021_003FUsers_003FMOYV_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fd44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e_003FSystem_002ECollections_002EGeneric_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ATimeSpan_002Ecs_002Fl_003AC_0021_003FUsers_003FMOYV_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F321eb2db7c6d43ea8fc39b54eaca345246ae00_003F50_003Fbbfa9b35_003FTimeSpan_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=982d4d3f_002D52fb_002D47bd_002D933f_002D1219ee983b56/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestNormalRegister" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CB78610E-89A8-F9F8-596D-BBC46397F18D::.NETFramework,Version=v4.7.1::QFramework.Tests.TestArchitectureProxy.TestNormalRegister&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c87a961f_002D53e8_002D4c1b_002D9f68_002Dcbe064019ff7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestNormalRegister #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CB78610E-89A8-F9F8-596D-BBC46397F18D::.NETFramework,Version=v4.7.1::QFramework.Tests.TestArchitectureProxy.TestNormalRegister&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fad78824_002D2077_002D47c1_002D8064_002Dee46580c7124/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestNormalRegister #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CB78610E-89A8-F9F8-596D-BBC46397F18D::.NETFramework,Version=v4.7.1::QFramework.Tests.TestArchitectureProxy.TestNormalRegister&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

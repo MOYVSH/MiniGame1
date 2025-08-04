@@ -30,6 +30,7 @@ public class LaunchController : AbstractMonoBehaviourController
     
     private void GameStart()
     {
-        GameSceneController.Instance.FirstLoadMainScene().Forget();
+        // GameSceneController.Instance.FirstLoadMainScene().Forget();
+        SceneFlowController.Instance.FirstLoadMainScene().Forget();
     }
 }
