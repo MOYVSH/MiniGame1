@@ -154,12 +154,19 @@ public class SceneFlowController : MonoSingleton<SceneFlowController>, IControll
 
     public async UniTaskVoid FirstLoadMainScene()
     {
-        await LoadConfig(); // 加载配置数据
+        await this.GetUtility<YooassetUtility>().InitPackage(); // 初始化资源包
         await Task.Delay(TimeSpan.FromSeconds(0.2f));
         var system = GameArchitecture.Interface.GetSystem<UISystem>();
         system.OpenPanel<LoadingView>();
+        system.GetOpenedPanel<LoadingView>().SetProgress(0.1f);
+        
+        await LoadConfig(); // 加载配置数据
+        system.GetOpenedPanel<LoadingView>().SetProgress(0.2f);
+        
+        await Task.Delay(TimeSpan.FromSeconds(0.2f));
         this.SendCommand<InitModelDataCmd>(); // 初始化存档数据
         system.GetOpenedPanel<LoadingView>().SetProgress(0.3f);
+        
         GenerateObjectPool();
         StartLoading("GameScene");
     }
@@ -203,11 +210,12 @@ public class SceneFlowController : MonoSingleton<SceneFlowController>, IControll
     private async UniTask LoadConfig()
     {
         Log($"数据表加载开始，当前时间: {Time.time}");
-        IEnumerator coroutine = this.GetSystem<TimerSystem>().ExecuteBySlice(new List<Action>
+
+        await this.GetUtility<LubanUtility>().Initialize();
+        foreach (var table in this.GetUtility<LubanUtility>().Tables.TbFirst.DataList)
         {
-            
-        });
-        await coroutine.ToUniTask(this);
+            Log($"<color=red>加载数据表:</color> {table.Name}");
+        }
         Log($"数据表加载完成，当前时间: {Time.time}");
     }
 

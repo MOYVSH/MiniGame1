@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using QFramework;
@@ -15,11 +16,9 @@ public class YooassetUtility : IUtility
     public YooassetUtility()
     {
         YooAssets.Initialize();
-        
-        InitPackage().Forget();
     }
     
-    async UniTask InitPackage()
+    public async UniTask InitPackage()
     {
         var playMode = EPlayMode.EditorSimulateMode;
 
@@ -54,7 +53,19 @@ public class YooassetUtility : IUtility
         await handle;
         return handle.AssetObject as T;
     }
-    
+
+    public async UniTask<List<UnityEngine.TextAsset>> LoadConfigsAsync()
+    {
+        AllAssetsHandle handle = package.LoadAllAssetsAsync<UnityEngine.TextAsset>("Assets/Game/MiniGame_Res/Config");
+        await handle;
+        List<UnityEngine.TextAsset> list = new List<UnityEngine.TextAsset>();
+        foreach(var assetObj in handle.AllAssetObjects)
+        {    
+            list.Add(assetObj as UnityEngine.TextAsset);
+        }    
+        return list;
+    }
+
     public T LoadAssetSync<T>(string path) where T : Object
     {
         AssetHandle handle = package.LoadAssetSync(path);

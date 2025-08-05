@@ -1,0 +1,197 @@
+{
+    "Summary": {
+        "YooVersion": "2.1.2",
+        "UnityVersion": "6000.0.26f1",
+        "BuildDate": "2025/8/5 12:43:17",
+        "BuildSeconds": 19,
+        "BuildTarget": 19,
+        "BuildMode": 0,
+        "BuildPipeline": "BuiltinBuildPipeline",
+        "BuildPackageName": "MiniGame1",
+        "BuildPackageVersion": "2025-08-05-762",
+        "UniqueBundleName": false,
+        "EnableAddressable": true,
+        "LocationToLower": false,
+        "IncludeAssetGUID": false,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
+        "EnableSharePackRule": true,
+        "EncryptionClassName": "null",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "AssetFileTotalCount": 12,
+        "MainAssetTotalCount": 4,
+        "AllBundleTotalCount": 8,
+        "AllBundleTotalSize": 838922,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "ApplicationScene",
+            "AssetPath": "Assets/Game/Scenes/ApplicationScene.unity",
+            "AssetGUID": "55efa22c59679514fafdcf8f62fdc822",
+            "AssetTags": [],
+            "MainBundleName": "assets_game_scenes.bundle",
+            "MainBundleSize": 163636,
+            "DependAssets": []
+        },
+        {
+            "Address": "GameScene",
+            "AssetPath": "Assets/Game/Scenes/GameScene.unity",
+            "AssetGUID": "c2b4acff768ea3244a18877d1c8a8a22",
+            "AssetTags": [],
+            "MainBundleName": "assets_game_scenes.bundle",
+            "MainBundleSize": 163636,
+            "DependAssets": []
+        },
+        {
+            "Address": "LoadingView",
+            "AssetPath": "Assets/Game/MiniGame_Res/UI/LoadingView.prefab",
+            "AssetGUID": "1a3bcc24075f8a34c83e93c7b7d82a02",
+            "AssetTags": [],
+            "MainBundleName": "assets_game_minigame_res_ui.bundle",
+            "MainBundleSize": 7280,
+            "DependAssets": [
+                "Assets/Game/Resources/UI/Texture/bar01.png",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/Game/Resources/UI/Texture/bar02.png",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        },
+        {
+            "Address": "test_tbfirst",
+            "AssetPath": "Assets/Game/MiniGame_Res/Config/test_tbfirst.bytes",
+            "AssetGUID": "8ef34697f6906564ebfc68eb2bd9b545",
+            "AssetTags": [],
+            "MainBundleName": "assets_game_minigame_res_config.bundle",
+            "MainBundleSize": 1259,
+            "DependAssets": []
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "assets_game_scenes.bundle",
+            "FileName": "f4df351b0bbc8d6cf043aede91a76ac4.bundle",
+            "FileHash": "f4df351b0bbc8d6cf043aede91a76ac4",
+            "FileCRC": "34b5ee96",
+            "FileSize": 163636,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/Game/Scenes/ApplicationScene.unity",
+                "Assets/Game/Scenes/GameScene.unity"
+            ]
+        },
+        {
+            "BundleName": "assets_game_minigame_res_ui.bundle",
+            "FileName": "8a942df40c1ee5233ce57de2e88ac241.bundle",
+            "FileHash": "8a942df40c1ee5233ce57de2e88ac241",
+            "FileCRC": "1086276f",
+            "FileSize": 7280,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "share_assets_game_resources_ui_texture.bundle",
+                "share_assets_textmesh_pro_fonts.bundle",
+                "share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+                "unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/Game/MiniGame_Res/UI/LoadingView.prefab"
+            ]
+        },
+        {
+            "BundleName": "assets_game_minigame_res_config.bundle",
+            "FileName": "fd7a0130b3cb8357187bba13bd20635c.bundle",
+            "FileHash": "fd7a0130b3cb8357187bba13bd20635c",
+            "FileCRC": "a7f51ae4",
+            "FileSize": 1259,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/Game/MiniGame_Res/Config/test_tbfirst.bytes"
+            ]
+        },
+        {
+            "BundleName": "share_assets_game_resources_ui_texture.bundle",
+            "FileName": "385f6d8ecccb1bb4efebee75d24c0e67.bundle",
+            "FileHash": "385f6d8ecccb1bb4efebee75d24c0e67",
+            "FileCRC": "2dd54d77",
+            "FileSize": 6318,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/Game/Resources/UI/Texture/bar01.png",
+                "Assets/Game/Resources/UI/Texture/bar02.png"
+            ]
+        },
+        {
+            "BundleName": "share_packages_com_unity_ugui_editor_resources_gizmos.bundle",
+            "FileName": "ae1ad4e7b09a38583421fda176e5c5a3.bundle",
+            "FileHash": "ae1ad4e7b09a38583421fda176e5c5a3",
+            "FileCRC": "0d225d32",
+            "FileSize": 5498,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Packages/com.unity.ugui/Editor Resources/Gizmos/TMP - Text Component Icon.psd"
+            ]
+        },
+        {
+            "BundleName": "unityshaders.bundle",
+            "FileName": "38c3da40ef78f3fb0046ef938824c6da.bundle",
+            "FileHash": "38c3da40ef78f3fb0046ef938824c6da",
+            "FileCRC": "6370399d",
+            "FileSize": 53597,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader"
+            ]
+        },
+        {
+            "BundleName": "share_assets_textmesh_pro_resources_fonts_&_materials.bundle",
+            "FileName": "037d5fd4eb8e523ee721fb9f05c9c14a.bundle",
+            "FileHash": "037d5fd4eb8e523ee721fb9f05c9c14a",
+            "FileCRC": "6699adc5",
+            "FileSize": 374111,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "share_assets_textmesh_pro_fonts.bundle",
+                "unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset"
+            ]
+        },
+        {
+            "BundleName": "share_assets_textmesh_pro_fonts.bundle",
+            "FileName": "044d4c7a288c8968ccfe3d0249cbd539.bundle",
+            "FileHash": "044d4c7a288c8968ccfe3d0249cbd539",
+            "FileCRC": "6be065b7",
+            "FileSize": 227223,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+            ]
+        }
+    ],
+    "IndependAssets": []
+}
