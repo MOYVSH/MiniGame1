@@ -216,6 +216,11 @@ public class SceneFlowController : MonoSingleton<SceneFlowController>, IControll
         {
             Log($"<color=red>加载数据表:</color> {table.Name}");
         }
+        foreach (var table in this.GetUtility<LubanUtility>().Tables.TbSecond.DataList)
+        {
+            Log($"<color=red>加载数据表:</color> {table.Name}");
+        }
+        
         Log($"数据表加载完成，当前时间: {Time.time}");
     }
 

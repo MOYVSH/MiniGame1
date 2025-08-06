@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using QFramework;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using YooAsset;
 using Object = UnityEngine.Object;
@@ -26,22 +27,39 @@ public class YooassetUtility : IUtility
         package = YooAssets.TryGetPackage(PackageName);
         if (package == null)
             package = YooAssets.CreatePackage(PackageName);
+        YooAssets.SetDefaultPackage(package);
+
 
         switch (playMode)
         {
             // 单机运行模式
             case EPlayMode.EditorSimulateMode:
             {
+                var buildResult = EditorSimulateModeHelper.SimulateBuild(PackageName);    
+                var packageRoot = buildResult.PackageRootDirectory;
+                var editorFileSystemParams = FileSystemParameters.CreateDefaultEditorFileSystemParameters(packageRoot);
                 var initParameters = new EditorSimulateModeParameters();
-                var simulateManifestFilePath = EditorSimulateModeHelper.SimulateBuild(EDefaultBuildPipeline.BuiltinBuildPipeline, PackageName);
-                initParameters.SimulateManifestFilePath  = simulateManifestFilePath;
-                await package.InitializeAsync(initParameters);
+                initParameters.EditorFileSystemParameters = editorFileSystemParams;
+                var initOperation = package.InitializeAsync(initParameters);
+                await initOperation;
+                
+                var op = package.RequestPackageVersionAsync();
+                await op;
+                await package.UpdatePackageManifestAsync(op.PackageVersion);
+                
+                if(initOperation.Status == EOperationStatus.Succeed)
+                    Debug.Log("资源包初始化成功！");
+                else 
+                    Debug.LogError($"资源包初始化失败：{initOperation.Error}");
                 break;
             }
             case EPlayMode.OfflinePlayMode:
             {
+                var buildinFileSystemParams = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
                 var initParameters = new OfflinePlayModeParameters();
-                await package.InitializeAsync(initParameters);
+                initParameters.BuildinFileSystemParameters = buildinFileSystemParams;
+                var initOperation = package.InitializeAsync(initParameters);
+                await initOperation;
                 break;
             }
         }
@@ -56,7 +74,8 @@ public class YooassetUtility : IUtility
 
     public async UniTask<List<UnityEngine.TextAsset>> LoadConfigsAsync()
     {
-        AllAssetsHandle handle = package.LoadAllAssetsAsync<UnityEngine.TextAsset>("Assets/Game/MiniGame_Res/Config");
+        // 不知道是不是设计问题 这个地方得传一个确定文件的路径 不能是父级文件夹的路径
+        AllAssetsHandle handle = package.LoadAllAssetsAsync<UnityEngine.TextAsset>("Assets/Game/MiniGame_Res/Config/test_tbfirst");
         await handle;
         List<UnityEngine.TextAsset> list = new List<UnityEngine.TextAsset>();
         foreach(var assetObj in handle.AllAssetObjects)
@@ -84,9 +103,19 @@ public class YooassetUtility : IUtility
     {
         if (package == null) 
             return null;
-        SceneHandle handle = package.LoadSceneAsync(scenePathName, loadSceneMode, false, 100);
-        await handle;
-        onProgress?.Invoke(scenePathName, 100, 100);
-        return handle;
+        
+        try
+        {
+            SceneHandle handle = package.LoadSceneAsync(scenePathName, loadSceneMode, LocalPhysicsMode.None, false, 100);
+            await handle;
+            onProgress?.Invoke(scenePathName, 100, 100);
+            return handle;
+        }
+        catch (Exception e)
+        {
+            throw;
+        }
+
+
     }
 }
