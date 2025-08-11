@@ -29,8 +29,8 @@ MonoBehaviour:
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Game/Scenes
-        CollectorGUID: 54396e81d601b504e99b5ba61294591e
+      - CollectPath: Assets/Game/MiniGame_Res/Scene
+        CollectorGUID: 09cd278480d73ed469605d818d655a46
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
