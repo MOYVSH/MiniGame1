@@ -16,20 +16,6 @@ public class LubanUtility : IUtility
     
     public async UniTask Initialize()
     {
-        
-// #if UNITY_EDITOR
-//         // // 初始化逻辑
-//         // Tables = new cfg.Tables(file =>
-//         // {
-//         //     var text = File.ReadAllText($"{gameConfDir}/{file}.json");
-//         //     return JArray.Parse(text);
-//         // });
-//         //
-//         // return;
-// #else
-//
-// #endif
-        
         try
         {
             var handle = GameArchitecture.Interface.GetUtility<YooassetUtility>().LoadConfigsAsync();
@@ -41,6 +27,9 @@ public class LubanUtility : IUtility
                 dict[r.name] = r.bytes;
             }
             Tables = new cfg.Tables(file => new ByteBuf(dict[file]));
+            
+            results.Clear();
+            dict.Clear();
         }
         catch (Exception e)
         {

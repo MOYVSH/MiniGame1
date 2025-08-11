@@ -24,8 +24,6 @@ public class MyYooAsset
     {
         // 设置资源系统运行模式
         PlayMode = playMode;
-        Debug.LogError($"Set YooAsset PlayMode: {PlayMode}");
-        
         // 这里可以添加一些初始化代码
         Debug.Log("MyYooAsset 初始化");
     }
@@ -37,6 +35,8 @@ public class MyYooAsset
         //1.初始化YooAsset资源系统
         YooAssets.Initialize();
 
+        YooAssets.SetOperationSystemMaxTimeSlice(100);
+        
         //2.初始化资源包
         await InitPackage();
 
@@ -74,6 +74,7 @@ public class MyYooAsset
             var buildResult = EditorSimulateModeHelper.SimulateBuild(packageName);
             var packageRoot = buildResult.PackageRootDirectory;
             var createParameters = new EditorSimulateModeParameters();
+            createParameters.BundleLoadingMaxConcurrency = 10; //设置最大并发加载数
             createParameters.EditorFileSystemParameters = FileSystemParameters.CreateDefaultEditorFileSystemParameters(packageRoot);
             initializationOperation = _package.InitializeAsync(createParameters);
         }
@@ -100,7 +101,9 @@ public class MyYooAsset
                 //创建内置文件系统参数
                 BuildinFileSystemParameters = null,
                 //创建缓存系统参数
-                CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices)
+                CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices),
+                //设置最大并发加载数
+                BundleLoadingMaxConcurrency = 10
             };
             //执行异步初始化
             initializationOperation = _package.InitializeAsync(createParameters);

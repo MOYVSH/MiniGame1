@@ -3,6 +3,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using QFramework;
+using UniFramework.Pooling;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
@@ -39,10 +40,9 @@ public class GameSceneController : MonoSingleton<GameSceneController>, IControll
     
     private void GenerateObjectPool()
     {
-        GameObject obj = new GameObject("ObjectPool");
-        DontDestroyOnLoad(obj);
-        ObjectPool pool = obj.AddComponent<ObjectPool>();
-        pool.freeNode = obj.transform;
+        UniPooling.Initalize();
+        // 创建孵化器
+        var spawner = UniPooling.CreateSpawner(YooassetUtility.PackageName);
     }
 
     private async UniTask ChangeScene(string sceneName)

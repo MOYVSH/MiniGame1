@@ -6,6 +6,7 @@ using MonsterLove.StateMachine;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using QFramework;
+using UniFramework.Pooling;
 using UnityEngine.SceneManagement;
 
 public class SceneFlowController : MonoSingleton<SceneFlowController>, IController 
@@ -173,10 +174,9 @@ public class SceneFlowController : MonoSingleton<SceneFlowController>, IControll
 
     private void GenerateObjectPool()
     {
-        GameObject obj = new GameObject("ObjectPool");
-        DontDestroyOnLoad(obj);
-        ObjectPool pool = obj.AddComponent<ObjectPool>();
-        pool.freeNode = obj.transform;
+        UniPooling.Initalize();
+        // 创建孵化器
+        var spawner = UniPooling.CreateSpawner(YooassetUtility.PackageName);
     }
     
     public void StartLoading(string sceneName)
@@ -212,6 +212,8 @@ public class SceneFlowController : MonoSingleton<SceneFlowController>, IControll
         Log($"数据表加载开始，当前时间: {Time.time}");
 
         await this.GetUtility<LubanUtility>().Initialize();
+        await this.GetUtility<YooassetUtility>().UnloadUnusedAssets();
+        
         foreach (var table in this.GetUtility<LubanUtility>().Tables.TbFirst.DataList)
         {
             Log($"<color=red>加载数据表:</color> {table.Name}");
