@@ -156,6 +156,7 @@ public class SceneFlowController : MonoSingleton<SceneFlowController>, IControll
     public async UniTaskVoid FirstLoadMainScene()
     {
         await this.GetUtility<YooassetUtility>().InitPackage(); // 初始化资源包
+        ShaderWarmUp(); // 预热着色器
         await Task.Delay(TimeSpan.FromSeconds(0.2f));
         var system = GameArchitecture.Interface.GetSystem<UISystem>();
         system.OpenPanel<LoadingView>();
@@ -170,6 +171,23 @@ public class SceneFlowController : MonoSingleton<SceneFlowController>, IControll
         
         GenerateObjectPool();
         StartLoading("GameScene");
+    }
+
+    private void ShaderWarmUp()
+    {
+        ShaderVariantCollection shaderVariantCollection = null;
+        shaderVariantCollection =
+            this.GetUtility<YooassetUtility>().LoadAssetSync<ShaderVariantCollection>("MyShaderVariants");
+        
+        if (shaderVariantCollection == null)
+        {
+            Debug.LogError($"着色器预热失败，未找到着色器变体集合");
+        }
+        else
+        {
+            shaderVariantCollection.WarmUp();
+            Debug.Log($"预热了着色器变体集合中的 {shaderVariantCollection.shaderCount} 个着色器");
+        }
     }
 
     private void GenerateObjectPool()

@@ -11,16 +11,16 @@ using Object = UnityEngine.Object;
 public class YooassetUtility : IUtility
 {
     public readonly static string PackageName = "MiniGame1";
-    private static string hostServerIP = "http://127.0.0.1";//服务器地址
-    private static string appVersion = "v1.0"; //版本号
+    public readonly static string hostServerIP = "http://127.0.0.1";//服务器地址
+    public readonly static string appVersion = "v1.1"; //版本号
     private ResourcePackage _package = null; //资源包对象
 
     private MyYooAsset _yoosetAsset = null; //自定义的YooAsset类
     
     public YooassetUtility()
     {
-        // _yoosetAsset = new MyYooAsset(EPlayMode.HostPlayMode);
-        _yoosetAsset = new MyYooAsset(EPlayMode.EditorSimulateMode);
+         _yoosetAsset = new MyYooAsset(EPlayMode.HostPlayMode);
+        //_yoosetAsset = new MyYooAsset(EPlayMode.EditorSimulateMode);
     }
     
     public async UniTask InitPackage()

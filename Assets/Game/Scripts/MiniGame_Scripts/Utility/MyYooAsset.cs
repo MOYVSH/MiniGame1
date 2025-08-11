@@ -24,6 +24,10 @@ public class MyYooAsset
     {
         // 设置资源系统运行模式
         PlayMode = playMode;
+
+        hostServerIP = YooassetUtility.hostServerIP;
+        appVersion = YooassetUtility.appVersion;
+        
         // 这里可以添加一些初始化代码
         Debug.Log("MyYooAsset 初始化");
     }
