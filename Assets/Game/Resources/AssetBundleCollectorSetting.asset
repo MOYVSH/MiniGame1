@@ -42,8 +42,21 @@ MonoBehaviour:
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Game/MiniGame_Res/UI
-        CollectorGUID: f6e7bc04d5535a74bb5227314746bf46
+      - CollectPath: Assets/Game/MiniGame_Res/UI/Prefab
+        CollectorGUID: d64ab4b0d15eea04abdaa1a98a0d3dec
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Texture
+      GroupDesc: "\u8D34\u56FE"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Game/MiniGame_Res/UI/Texture
+        CollectorGUID: b2e512b788a712f4fbbbf7ba2da6352e
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
@@ -57,6 +70,14 @@ MonoBehaviour:
       Collectors:
       - CollectPath: Assets/Game/MiniGame_Res/Config
         CollectorGUID: 435b01564f7c1684caaf8525323b41fe
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: 
+        CollectorGUID: 
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory

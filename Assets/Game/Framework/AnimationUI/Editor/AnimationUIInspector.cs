@@ -137,11 +137,8 @@ namespace AnimationUI
                 }
 
                 
-                sequence.AtTime = "At " + _currentTime.ToString() + "s";
+                sequence.AtTime = "At " + _currentTime + "s";
                 sequence.StartTime = _currentTime;
-                Debug.LogError("sequence.SequenceType "+sequence.SequenceType);
-                Debug.LogError("sequence.AtTime "+sequence.AtTime);
-                Debug.LogError("sequence.StartTime "+sequence.StartTime );
                 
                 if (sequence.Duration < 0) sequence.Duration = 0; // Clamp
                 if (sequence.SequenceType == Sequence.Type.Animation)
